@@ -1,4 +1,5 @@
-x = int()
-
-if (5 * x)/7 == 0 and 1500 < x < 2700:
-    print(x)
+iterator = 1500
+while(iterator <= 2700):
+    if iterator % 5 == 0 and iterator % 7 == 0:
+        print(iterator)
+    iterator += 1
