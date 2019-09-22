@@ -6,6 +6,7 @@ def func(a, z, *args, **kwargs):
         a_sum += item
     return a_sum
 
+
 """
 args take all undefined elements, so here we don't get 2 and 3 displayed
 kwargs display all other arguments
