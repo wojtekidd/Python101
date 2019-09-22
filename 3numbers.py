@@ -1,4 +1,4 @@
-first = int(input("Give me the first number: "))
+first = int(input("Give me the first number please: "))
 second = int(input("Give me the second number: "))
 third  = int(input("Give me the third number: "))
 sum = first + second + third
