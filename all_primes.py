@@ -1,17 +1,23 @@
-import is_prime
+def all_primes(x):
 
+    def is_prime(n):
+        for item in range(1, int(n/2)):
+            if n % item == 0:
+                return False
+        return True
 
-def all_primes(n):
-    for element in range(0, n):
+    all_prime_numbers = []
+    for element in range(1, n):
         if is_prime(element) is True:
-            return element
+            all_prime_numbers.append(element)
 
 
-print(all_primes(20))
+
+
+
 
 """
-W drugim zadaniu napisz najpierw funkcję, która sprawdza czy podana liczba jest pierwsza (is_prime(n)). 
-Do napisania tej funkcji będzie potrzbna pętla, która iteruje po kolejnych liczbach całkowitych (od 1 do n/2). 
-Jeżeli nasza liczba n będzie podzielna przez którąś z tych liczb wtedy n nie jest pierwsza. 
-Jeżeli liczba n nie będzie podzielna przez żadną z liczb od 1 do n/2 wtedy jest pierwsza.
+Odnośnie drugiego zadania, kiedy mamy już funkcje is_prime używamy ja wewnątrz drugiej funkcji. 
+Ta druga funkcja przechodzi po wszystkich liczbach mniejszych od n i za każdym razem sprawdza czy aktualna liczba jest pierwszą. 
+Jeżeli jest pierwsza dodaje ja do wcześniej przygotowanej list. Na koniec zwraca zapełniona listę.
 """
