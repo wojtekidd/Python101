@@ -1,0 +1,33 @@
+# l = [1,2,3,4,5]
+# print(len(l))
+# l.append(2)
+# print(l.count(2))
+# print(l.count(7))
+# l.extend([6,7,8])
+# print(l.index(7))
+# l.insert(0,10)
+# print(l)
+# print(l.index(10))
+# print(l[-1])
+# print(l.pop())
+# print(l)
+# l.remove(4)
+# print(l)
+# l.reverse()
+# print(l)
+# l.sort()
+# print(l)
+# l.clear()
+
+# l = ["User1", "UserChris", "User2", "Admin"]
+# print(l[1:2])
+# print(l[1:4])
+# print(l[0:3])
+# print(l[0:3])
+
+# k = ("boil water", "insert egg", "wait 5min", "eat")
+# print(k[2])
+# print(k[2:4])
+# print(k.count("wait 5min"))
+# print(k.index("boil water"))
+
