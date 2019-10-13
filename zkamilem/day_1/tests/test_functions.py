@@ -13,6 +13,15 @@ def test_format_number():
     assert format_phone_number('697120906', area_code='+10') == '+10 (0) 697-120-906'
     assert format_phone_number('697120906', delimeter='+') == '+48 (0) 697+120+906'
     assert format_phone_number('697120906', '+48', '+') == '+48 (0) 697+120+906'
+    data = {
+        'number': '697120906',
+        'area_code': '+48',
+        'delimeter': '+'
+    }
+    data_list = ['697120906', '+48', '+']
+    assert format_phone_number(**data) == '+48 (0) 697+120+906'
+    assert format_phone_number(*data_list) == '+48 (0) 697+120+906'
+
 
 @pytest.mark.skip
 @pytest.mark.parametrize("test_input,expected", [
