@@ -30,8 +30,17 @@ def test_format_number():
     (['600171761', '+48', '-'], '+48 (0) 600-171-761')
 ])
 def test_format_number_advanced(test_input, expected):
+    """*test_input - because of the list in test_input"""
     assert format_phone_number(*test_input) == expected
 
+@pytest.mark.parametrize("test_input,expected", [
+    ({
+        'number': '600171761'
+    }, '+48 (0) 600-171-761'),
+])
+def test_format_number_advanced(test_input, expected):
+    """**test_input - because of the dictionary in test_input"""
+    assert format_phone_number(**test_input) == expected
 
 @pytest.mark.skip
 def test_less_than():
