@@ -56,7 +56,8 @@ def test_less_than():
     ('ala', True),
     ('igor łamał rogi', True),
     ('iGor łamał Rogi', True),
-    ('iGor łamał Rogi  ', True),
+    ('iGor łamał Rogi ', True),
+    ('iGor łamał Rogi ,', True),
     ('Ala ma kota', False),
 ])
 def test_is_palindrom(test_input, expected):

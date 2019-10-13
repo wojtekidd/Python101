@@ -24,11 +24,8 @@ def less_than(cutoff_val, values):
 
 def is_palindrom(text):
     # funkcja powinna zwrócić wartość True jeśli zdanie jest palindrom i False jeśli nie.
-    text = (text.lower()).strip()
-    if text[::-1] == text:
-        return True
-    else:
-        return False
+    text = text.lower().strip().replace(',', ' ')
+    return text == text[::-1]
 
 
 def remove_duplicates(values):
