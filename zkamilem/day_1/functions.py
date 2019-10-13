@@ -1,5 +1,5 @@
 from textwrap import wrap
-
+from typing import List
 
 def format_phone_number(number, area_code='+48', delimeter='-'):
     wrapped_number = delimeter.join(wrap(number, 3))
@@ -7,10 +7,10 @@ def format_phone_number(number, area_code='+48', delimeter='-'):
     pass
 
 
-def less_than(cutoff_val, values):
+def less_than(cutoff_val: int, values: List) -> [List]:
     # funkcja powinna zwrócić wartości mniejsze od "cutoff_val" w liście "values"
-    was_something_removed = False
-    result = []
+    was_something_removed: bool = False
+    result: List = []
     for value in values:
         if value < cutoff_val:
             result.append(value)
@@ -45,7 +45,7 @@ def remove_duplicates(values):
 
 
 
-def safe_division(number, divisor, ignore_zero_division=False):
+def safe_division(number: int, divisor: int, ignore_zero_division: bool=False) -> [int]:
     # funkcja na podstawie flagi ignore_zero_division powinno zwrócić float('inf') lub wyjątek
     # ignore_zero_division powinno domyślnie być False
     try:
@@ -54,6 +54,3 @@ def safe_division(number, divisor, ignore_zero_division=False):
         if ignore_zero_division:
             return float('inf')
         raise
-
-
-
