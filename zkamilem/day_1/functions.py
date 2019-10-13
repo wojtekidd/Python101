@@ -1,5 +1,6 @@
 from textwrap import wrap
 from typing import List
+from typing import Tuple
 
 def format_phone_number(number, area_code='+48', delimeter='-'):
     wrapped_number = delimeter.join(wrap(number, 3))
@@ -7,10 +8,10 @@ def format_phone_number(number, area_code='+48', delimeter='-'):
     pass
 
 
-def less_than(cutoff_val: int, values: List) -> [List]:
+def less_than(cutoff_val: int, values: List[int]) -> Tuple[List[int], bool]:
     # funkcja powinna zwrócić wartości mniejsze od "cutoff_val" w liście "values"
     was_something_removed: bool = False
-    result: List = []
+    result: List[int] = []
     for value in values:
         if value < cutoff_val:
             result.append(value)
