@@ -64,7 +64,7 @@ def test_is_palindrom(test_input, expected):
     assert is_palindrom(test_input) == expected
 
 
-@pytest.mark.skip
+#@pytest.mark.skip
 def test_remove_duplicates():
     # TODO #5 popraw test i funkcje
     list_without_duplicates = remove_duplicates(['Jan', 'Magda', 'Monika'])

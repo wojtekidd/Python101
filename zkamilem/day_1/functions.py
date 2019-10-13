@@ -24,12 +24,13 @@ def less_than(cutoff_val, values):
 
 def is_palindrom(text):
     # funkcja powinna zwrócić wartość True jeśli zdanie jest palindrom i False jeśli nie.
-    text = text.lower().strip().replace(',', ' ')
+    text = text.lower().replace(',', '').strip()
     return text == text[::-1]
 
 
 def remove_duplicates(values):
     # funkcja powinna zwrócić listę bez duplikatów oraz informację czy był jakiś duplikat
+
     pass
 
 
