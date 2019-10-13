@@ -18,18 +18,19 @@ def test_format_number():
         'area_code': '+48',
         'delimeter': '+'
     }
-    data_list = ['697120906', '+48', '+']
     assert format_phone_number(**data) == '+48 (0) 697+120+906'
+    data_list = ['697120906', '+48', '+']
     assert format_phone_number(*data_list) == '+48 (0) 697+120+906'
 
 
-@pytest.mark.skip
+#@pytest.mark.skip
 @pytest.mark.parametrize("test_input,expected", [
-    ('697120906', '+48 (0) 697-120-906'),
-    # TODO #2 zmodyfikuj test i test_input tak aby można było przekazać też opcjonalne argumenty
+    (['697120906'], '+48 (0) 697-120-906'),
+    (['600171761'], '+48 (0) 600-171-761'),
+    (['600171761', '+48', '-'], '+48 (0) 600-171-761')
 ])
 def test_format_number_advanced(test_input, expected):
-    assert format_phone_number(test_input) == expected
+    assert format_phone_number(*test_input) == expected
 
 
 @pytest.mark.skip
