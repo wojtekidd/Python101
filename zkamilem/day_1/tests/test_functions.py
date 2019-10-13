@@ -11,8 +11,8 @@ from day_1.functions import safe_division
 def test_format_number():
     assert format_phone_number('697120906') == '+48 (0) 697-120-906'
     assert format_phone_number('697120906', area_code='+10') == '+10 (0) 697-120-906'
-    # TODO #1 przetestuj zmiany innych argumentów
-
+    assert format_phone_number('697120906', delimeter='+') == '+48 (0) 697+120+906'
+    assert format_phone_number('697120906', '+48', '+') == '+48 (0) 697+120+906'
 
 @pytest.mark.skip
 @pytest.mark.parametrize("test_input,expected", [
@@ -23,7 +23,7 @@ def test_format_number_advanced(test_input, expected):
     assert format_phone_number(test_input) == expected
 
 
-# @pytest.mark.skip
+@pytest.mark.skip
 def test_less_than():
     # TODO #3 popraw test ;)
     data = {
