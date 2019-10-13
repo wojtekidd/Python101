@@ -51,14 +51,13 @@ def test_less_than():
     assert less_than(**data) == ([1, 2], True)
 
 
-@pytest.mark.skip
+#@pytest.mark.skip
 @pytest.mark.parametrize("test_input,expected", [
     ('ala', True),
     ('igor łamał rogi', True),
     ('Ala ma kota', False),
 ])
 def test_is_palindrom(test_input, expected):
-    # TODO #4 popraw funkcje tak aby test przeszedł
     assert is_palindrom(test_input) == expected
 
 
