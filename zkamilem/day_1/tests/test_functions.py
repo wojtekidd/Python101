@@ -42,14 +42,13 @@ def test_format_number_advanced(test_input, expected):
     """**test_input - because of the dictionary in test_input"""
     assert format_phone_number(**test_input) == expected
 
-@pytest.mark.skip
+#@pytest.mark.skip
 def test_less_than():
-    # TODO #3 popraw test ;)
     data = {
         'cutoff_val': 5,
         'values': [1, 2, 8]
     }
-    assert less_than(**data) == [1, 2]
+    assert less_than(**data) == ([1, 2], True)
 
 
 @pytest.mark.skip
