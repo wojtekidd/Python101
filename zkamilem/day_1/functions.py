@@ -24,6 +24,7 @@ def less_than(cutoff_val, values):
 
 def is_palindrom(text):
     # funkcja powinna zwrócić wartość True jeśli zdanie jest palindrom i False jeśli nie.
+    text = text.lower()
     if text[::-1] == text:
         return True
     else:

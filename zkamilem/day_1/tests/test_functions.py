@@ -55,6 +55,7 @@ def test_less_than():
 @pytest.mark.parametrize("test_input,expected", [
     ('ala', True),
     ('igor łamał rogi', True),
+    ('iGor łamał Rogi', True),
     ('Ala ma kota', False),
 ])
 def test_is_palindrom(test_input, expected):
