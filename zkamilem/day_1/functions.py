@@ -46,7 +46,7 @@ def remove_duplicates(values):
 
 
 
-def safe_division(number: int, divisor: int, ignore_zero_division: bool=False) -> [int]:
+def safe_division(number: float, divisor: float, ignore_zero_division: bool=False) -> float:
     # funkcja na podstawie flagi ignore_zero_division powinno zwrócić float('inf') lub wyjątek
     # ignore_zero_division powinno domyślnie być False
     try:
