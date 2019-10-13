@@ -9,8 +9,17 @@ def format_phone_number(number, area_code='+48', delimeter='-'):
 
 def less_than(cutoff_val, values):
     # funkcja powinna zwrócić wartości mniejsze od "cutoff_val" w liście "values"
-    return ([x for x in values if x < cutoff_val], True)
-    pass
+    was_something_removed = False
+    result = []
+    for value in values:
+        if value < cutoff_val:
+            result.append(value)
+        else:
+            was_something_removed = True
+
+    return result, was_something_removed
+
+
 
 
 def is_palindrom(text):
