@@ -30,11 +30,30 @@ def is_palindrom(text):
 
 def remove_duplicates(values):
     # funkcja powinna zwrócić listę bez duplikatów oraz informację czy był jakiś duplikat
+    list1 = []
+    was_a_duplicate = False
+    for value in values:
+        if value not in list1:
+          list1.append(value)
+        else:
+            was_a_duplicate = True
+    return sorted(list1), was_a_duplicate
 
-    pass
+# set_val = set(values)
+# list_sorted = sorted(list(set_val))
+# return list_sorted, was_a_duplicate
 
 
-def safe_division(number, divisor, ignore_zero_division):
+
+def safe_division(number, divisor, ignore_zero_division=False):
     # funkcja na podstawie flagi ignore_zero_division powinno zwrócić float('inf') lub wyjątek
     # ignore_zero_division powinno domyślnie być False
-    pass
+    try:
+        return number / divisor
+    except ZeroDivisionError:
+        if ignore_zero_division:
+            return float('inf')
+        raise
+
+
+

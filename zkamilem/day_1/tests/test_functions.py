@@ -67,13 +67,14 @@ def test_is_palindrom(test_input, expected):
 #@pytest.mark.skip
 def test_remove_duplicates():
     # TODO #5 popraw test i funkcje
-    list_without_duplicates = remove_duplicates(['Jan', 'Magda', 'Monika'])
-    assert list_without_duplicates == (['Jan', 'Magda', 'Monika'], True)
+    list_without_duplicates = remove_duplicates(['Adam', 'Jan', 'Magda', 'Monika', 'Monika'])
+    assert list_without_duplicates == (['Adam', 'Jan', 'Magda', 'Monika'], True)
 
 
-@pytest.mark.skip
+#@pytest.mark.skip
 def test_safe_division():
     # TODO #6 popraw funkcje tak aby test przeszedł, dodaj kolejne testy
     assert safe_division(10, 2) == 5.0
+    assert safe_division(10, 0, ignore_zero_division=True) == float('inf')
     with pytest.raises(ZeroDivisionError):
         safe_division(10, 0)
