@@ -8,7 +8,7 @@ def sort_array(array):
             if min_el > tab[iterator]:
                 min_el = tab[iterator]
                 min_ind = iterator
-            print(f"step: {counter}, min_index: {min_ind}, min_element: {min_el}, iterator: {iterator}")
+            print(f"step: {counter}, min_index: {min_ind}, min_element: {min_el}, iterator: {iterator}, array:{array}")
         tab[min_ind] = tab[counter]
         tab[counter] = min_el
     return array
