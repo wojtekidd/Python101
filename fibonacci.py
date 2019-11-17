@@ -21,6 +21,7 @@ def fib_iter(n):
             temp = a
             a = b
             b = temp + a
+        """f string debugujacy"""
         result = a + b
         return result
 

@@ -1,5 +1,5 @@
-tab = [98, 100, 99, 2, 45, 101, 105, 104]
-
+tab = [98, 100, 99, 2, 45, 101, 105, 1]
+"""Selection sort"""
 def sort_array(array):
     for counter in range(len(array)):
         min_el = array[counter]
