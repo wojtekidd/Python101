@@ -51,4 +51,4 @@ def find_second_max(array):
     return second_max_element
 
 
-print(find_second_max([98, 100, 99, 2, 45]))
+print(find_second_max([98, 100, 99, 2, 45, 101]))
