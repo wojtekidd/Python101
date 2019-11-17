@@ -20,18 +20,34 @@ t = [4, 5, 6, 2, 22, 46, 34, 78, 9, 10]
 #            t[i+1] = temp
 # print(t)
 
-def bubble_sort(array):
-    for counter in range(len(array)):
-        for iterator in range(len(array) - 1):
-            if array[iterator] > array[iterator + 1]:
-                temp = array[iterator]
-                array[iterator] = array[iterator + 1]
-                array[iterator + 1] = temp
-    return array
+# def bubble_sort(array):
+#     for counter in range(len(array)):
+#         for iterator in range(len(array) - 1):
+#             if array[iterator] > array[iterator + 1]:
+#                 temp = array[iterator]
+#                 array[iterator] = array[iterator + 1]
+#                 array[iterator + 1] = temp
+#     return array
+#
+# print(bubble_sort([1,2,56,8,33]))
+#
+# element = 22
+# for i in range(len(t)-1):
+#     if t[i] == element:
+#         print(i)
 
-print(bubble_sort([1,2,56,8,33]))
 
-element = 22
-for i in range(len(t)-1):
-    if t[i] == element:
-        print(i)
+def find_second_max(array):
+    max_element = 0
+    second_max_element = 0
+    i = array[0]
+    for i in range(len(array)):
+        if max_element < array[i]:
+            second_max_element = max_element
+            max_element = array[i]
+        elif second_max_element < array[i]:
+            second_max_element = array[i]
+    return second_max_element
+
+
+print(find_second_max([98, 100, 2, 45]))

@@ -24,9 +24,5 @@ def fib_iter(n):
         result = a + b
         return result
 
-print(fib_iter(2345))
 
-
-
-
-
+print(fib_iter(100))

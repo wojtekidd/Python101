@@ -4,6 +4,7 @@ def fact(n):
         mul = mul * i
     return mul
 
+
 def fact2(n):
     if n == 1:
         return 1
@@ -11,6 +12,4 @@ def fact2(n):
         return n*fact2(n-1)
 
 
-
 print(fact(1000))
-
