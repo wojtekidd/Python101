@@ -38,16 +38,17 @@ t = [4, 5, 6, 2, 22, 46, 34, 78, 9, 10]
 
 
 def find_second_max(array):
-    max_element = 0
-    second_max_element = 0
+    max_element = array[0]
+    second_max_element = array[0]
     i = array[0]
     for i in range(len(array)):
         if max_element < array[i]:
             second_max_element = max_element
             max_element = array[i]
-        elif second_max_element < array[i]:
+        elif second_max_element < array[i] < max_element:
             second_max_element = array[i]
+        print("step " + str(i) + " max_element: " + str(max_element)+ " second_max_element: " +str(second_max_element))
     return second_max_element
 
 
-print(find_second_max([98, 100, 2, 45]))
+print(find_second_max([98, 100, 99, 2, 45]))
