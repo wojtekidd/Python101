@@ -34,19 +34,6 @@ class SLinkedList():
                 tmp = tmp.nextval
             tmp.nextval = Node(dataval)
 
-    def addElement(self, count, val):
-        tmp = self.headval
-        if tmp is None and count == 0:
-            self.headval = Node(val)
-        else:
-            counter = 0
-            while counter < count - 1:  # pętla działa póki counter jest mniejszy niż zdefiniowana pozycja wybranej wartości
-                counter += 1
-                tmp = tmp.nextval
-            insert_this = Node(val)  # tworzy element o zdefiniowanej wartości val
-            insert_this.nextval = tmp.nextval  # przypisuje tmp.nextval do nextval nowego elementu
-            tmp.nextval = insert_this  # podmienia następujące po tmp wartości (czyli jego nextval) utworzonym elementem
-
     def printlist(self):
         tmp = self.headval
         if tmp.nextval is None:
@@ -67,6 +54,24 @@ class SLinkedList():
             if counter == n:
                 return tmp.nextval
 
+
+def addElement(self, count, val):
+    tmp = self.headval
+    if count == 0:
+        if tmp is None:
+            self.headval = Node(val)
+        else:
+            insert_this = Node(val)
+            insert_this.nextval = self.headval
+            self.headval = insert_this
+    else:
+        counter = 0
+        while counter < count - 1:  # pętla działa póki counter jest mniejszy niż zdefiniowana pozycja wybranej wartości
+            counter += 1
+            tmp = tmp.nextval
+        insert_this = Node(val)  # tworzy element o zdefiniowanej wartości val
+        insert_this.nextval = tmp.nextval  # przypisuje tmp.nextval do nextval nowego elementu
+        tmp.nextval = insert_this  # podmienia następujące po tmp wartości (czyli jego nextval) utworzonym elementem
 
 list = SLinkedList()
 list.addElement(1,"w")
