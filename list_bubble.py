@@ -4,10 +4,8 @@ class Node:
         self.dataval = dataval
         self.nextval = None
 
-
     def __str__(self):
         return self.dataval
-
 
 class SLinkedList():
     def __init__(self):
@@ -23,7 +21,6 @@ class SLinkedList():
                 if tmp.nextval.nextval is None: #  Dochodzimy do przedostatniego
                     break
             tmp.nextval = None
-
 
     def append(self, dataval=None):
         tmp = self.headval
@@ -43,8 +40,7 @@ class SLinkedList():
                 print(tmp.dataval)
                 tmp = tmp.nextval
 
-
-    def get_element(self,n):
+    def get_element(self, n):
         counter = 0
         tmp = self.headval
         while tmp.nextval is not None:
@@ -52,7 +48,6 @@ class SLinkedList():
             counter += 1
             if counter == n:
                 return tmp.nextval
-
 
     def addElement(self, count, val):
         tmp = self.headval
@@ -71,7 +66,6 @@ class SLinkedList():
             insert_this = Node(val)  # tworzy element o zdefiniowanej wartości val
             insert_this.nextval = tmp.nextval  # przypisuje tmp.nextval do nextval nowego elementu
             tmp.nextval = insert_this  # podmienia następujące po tmp wartości (czyli jego nextval) utworzonym elementem
-
 
     def sort_list(self):
         iterator = self.headval
