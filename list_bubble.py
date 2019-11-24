@@ -11,7 +11,7 @@ class Node:
 
 class SLinkedList():
     def __init__(self):
-        self.headval = Node()
+        self.headval = None
 
     def remove_last(self):
         tmp = self.headval
@@ -74,21 +74,26 @@ class SLinkedList():
 
 
     def sort_list(self):
-        iterator = self.headval
-        while iterator.nextval is not None:
-            current = self.headval  # current jest 'zerowany' na headvalu
-            while current.nextval.nextval is not None:
-                if current.nextval.dataval > current.nextval.nextval.dataval:
-                    temp = current.nextval  # przypisanie wartości tymczasowej do nextval
-                    current.nextval = current.nextval.nextval  # pierwsza zamiana
-                    temp.nextval = temp.nextval.nextval  # druga zamiana
-                    current.nextval.nextval = temp  # trzecia zamiana
-                current = current.nextval  # przejście pętli
-            iterator = iterator.nextval
+        current_node = self.headval
+        if current_node.dataval > current_node.nextval.dataval:
+            tmp = current_node.nextval
+            current_node.nextval = current_node.nextval.nextval
+            tmp.nextval = current_node
+            self.headval = tmp
+            current_node = self.headval
+        while current_node.nextval.nextval is not None:
+            if current_node.nextval.dataval > current_node.nextval.nextval.dataval:
+                temp = current_node.nextval
+                current_node.nextval = current_node.nextval.nextval
+                temp.nextval = temp.nextval.nextval
+                current_node.nextval.nextval = temp
+            current_node = current_node.nextval
 
 
 list = SLinkedList()
-list.append(27)
+list.append(1)
+list.append(0)
+list.addElement(0,67)
 list.append(19)
 list.append(88)
 list.append(85)
@@ -96,6 +101,3 @@ list.append(213)
 list.append(34)
 list.sort_list()
 list.print_list()
-
-
-
