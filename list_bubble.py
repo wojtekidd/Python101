@@ -74,30 +74,32 @@ class SLinkedList():
 
 
     def sort_list(self):
-        current_node = self.headval
-        if current_node.dataval > current_node.nextval.dataval:
-            tmp = current_node.nextval
-            current_node.nextval = current_node.nextval.nextval
-            tmp.nextval = current_node
-            self.headval = tmp
+        iterator = self.headval
+        while iterator is not None:
+            iterator = iterator.nextval
             current_node = self.headval
-        while current_node.nextval.nextval is not None:
-            if current_node.nextval.dataval > current_node.nextval.nextval.dataval:
-                temp = current_node.nextval
+            if current_node.dataval > current_node.nextval.dataval:
+                tmp = current_node.nextval
                 current_node.nextval = current_node.nextval.nextval
-                temp.nextval = temp.nextval.nextval
-                current_node.nextval.nextval = temp
-            current_node = current_node.nextval
-
+                tmp.nextval = current_node
+                self.headval = tmp
+                current_node = self.headval
+            while current_node.nextval.nextval is not None:
+                if current_node.nextval.dataval > current_node.nextval.nextval.dataval:
+                    temp = current_node.nextval
+                    current_node.nextval = current_node.nextval.nextval
+                    temp.nextval = temp.nextval.nextval
+                    current_node.nextval.nextval = temp
+                current_node = current_node.nextval
 
 list = SLinkedList()
+list.append(8)
+list.append(7)
+list.append(6)
 list.append(1)
+list.append(2)
 list.append(0)
-list.addElement(0,67)
-list.append(19)
-list.append(88)
-list.append(85)
-list.append(213)
-list.append(34)
+list.print_list()
+print("*********")
 list.sort_list()
 list.print_list()
