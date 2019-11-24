@@ -4,9 +4,6 @@ class Node:
         self.dataval = dataval
         self.nextval = None
 
-    def __str__(self):
-        return self.dataval
-
 class SLinkedList():
     def __init__(self):
         self.headval = None
@@ -53,9 +50,9 @@ class SLinkedList():
         tmp = self.headval
         if count == 0:
             if tmp is None:
-                self.headval = Node(val)
+                self.headval = None
             else:
-                insert_this = Node(val)
+                insert_this = None
                 insert_this.nextval = self.headval
                 self.headval = insert_this
         else:
@@ -86,14 +83,34 @@ class SLinkedList():
                     current_node.nextval.nextval = temp
                 current_node = current_node.nextval
 
+    def queue_push(self, val):
+        tmp = Node(val)
+        tmp.nextval = self.headval
+        self.headval = tmp
+
+
+    def queue_pull(self):
+        tmp = self.headval
+        if tmp is None:
+            pass
+        else:
+            while tmp.nextval is not None:  # Jesli istnieje nastepna wartosc po tej
+                tmp = tmp.nextval  # Przechodzi do nastepnej wartosci
+                if tmp.nextval.nextval is None: #  Dochodzimy do przedostatniego
+                    break
+            tmp.nextval = None
+
+
+
+
 list = SLinkedList()
 list.append(8)
 list.append(7)
 list.append(6)
-list.append(1)
-list.append(2)
-list.append(0)
 list.print_list()
 print("*********")
-list.sort_list()
+list.queue_push(3)
+list.print_list()
+print("*********")
+list.queue_pull()
 list.print_list()
