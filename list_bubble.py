@@ -88,7 +88,6 @@ class SLinkedList():
         tmp.nextval = self.headval
         self.headval = tmp
 
-
     def queue_pull(self):
         tmp = self.headval
         if tmp is None:
@@ -99,6 +98,15 @@ class SLinkedList():
                 if tmp.nextval.nextval is None: #  Dochodzimy do przedostatniego
                     break
             tmp.nextval = None
+
+    def stack_push(self, val):
+        tmp = Node(val)
+        tmp.nextval = self.headval
+        self.headval = tmp
+
+    # def stack_pull(self):
+    #     tmp = self.headval
+    #     tmp.nextval = self.headval
 
 
 
