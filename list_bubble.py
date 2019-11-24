@@ -55,28 +55,43 @@ class SLinkedList():
                 return tmp.nextval
 
 
-def addElement(self, count, val):
-    tmp = self.headval
-    if count == 0:
-        if tmp is None:
-            self.headval = Node(val)
+    def addElement(self, count, val):
+        tmp = self.headval
+        if count == 0:
+            if tmp is None:
+                self.headval = Node(val)
+            else:
+                insert_this = Node(val)
+                insert_this.nextval = self.headval
+                self.headval = insert_this
         else:
-            insert_this = Node(val)
-            insert_this.nextval = self.headval
-            self.headval = insert_this
-    else:
-        counter = 0
-        while counter < count - 1:  # pętla działa póki counter jest mniejszy niż zdefiniowana pozycja wybranej wartości
-            counter += 1
+            counter = 0
+            while counter < count - 1:  # pętla działa póki counter jest mniejszy niż zdefiniowana pozycja wybranej wartości
+                counter += 1
+                tmp = tmp.nextval
+            insert_this = Node(val)  # tworzy element o zdefiniowanej wartości val
+            insert_this.nextval = tmp.nextval  # przypisuje tmp.nextval do nextval nowego elementu
+            tmp.nextval = insert_this  # podmienia następujące po tmp wartości (czyli jego nextval) utworzonym elementem
+
+
+    def sort_list(self):
+        tmp = self.headval
+        while tmp is None:
+            self.headval = Node()
+        else:
             tmp = tmp.nextval
-        insert_this = Node(val)  # tworzy element o zdefiniowanej wartości val
-        insert_this.nextval = tmp.nextval  # przypisuje tmp.nextval do nextval nowego elementu
-        tmp.nextval = insert_this  # podmienia następujące po tmp wartości (czyli jego nextval) utworzonym elementem
+            while tmp.nextval < tmp:
+                tmp = tmp.nextval
+                tmp.nextval = tmp
+
 
 list = SLinkedList()
-list.addElement(1,"w")
-list.addElement(1,"e")
-list.addElement(2,"r")
+list.append(27)
+list.append(19)
+list.append(68)
+list.append(85)
+list.append(34)
+list.sort_list()
 list.printlist()
 
 
