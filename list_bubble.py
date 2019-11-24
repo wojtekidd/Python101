@@ -107,7 +107,7 @@ class SLinkedList():
     # def stack_pull(self):
     #     tmp = self.headval
     #     tmp.nextval = self.headval
-
+    #     self.headval = None
 
 
 
@@ -117,8 +117,7 @@ list.append(7)
 list.append(6)
 list.print_list()
 print("*********")
-list.queue_push(3)
+list.stack_push(3)
 list.print_list()
-print("*********")
-list.queue_pull()
+list.stack_pull()
 list.print_list()
