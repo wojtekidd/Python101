@@ -75,3 +75,64 @@ on e.department_id = s.department_id and s.last_name = 'Taylor';
 select first_name, last_name, department_id from employees
 where department_id in (select department_id from employees where last_name like 'Taylor');
 
+-- Wyświetl wszystkich pracowników którzy zarabiają więcej niż wynosi średnia zarobków wszystkich pracowników w dziale Sales
+-- i nie są z działu Sales
+
+select * from employees where salary > (select round(avg(salary),2) from employees 
+where department_id = (select department_id from departments where department_name = 'Sales'))
+and department_id != (select department_id from departments where department_name = 'Sales');
+
+-- Napisz zapytanie aby wyświetlić imię, nazwisko, numer działu i nazwę dla wszystkich pracowników, którzy mają lub nie mają żadnego działu.
+
+select * from employees
+
+-- Wyświetl wszystkie nazwy regionów przyporządkowując je do nazw krajow.
+
+select r.region_name as Region, c.country_name as Country 
+from regions r
+join countries c
+on r.region_id = c.region_id;
+
+-- Wyświetl różnicę pomiędzy najwyższymi a najniższymi zarobkami w departamencie “Finance”
+select max(e.salary) - min(salary),  d.department_name from employees e
+join departments d
+on e.department_id = d.department_id
+where d.department_name = 'Finance';
+
+select e.last_name, r.region_name from employees e
+join departments d
+on e.department_id = d.department_id
+join locations l
+on d.location_id = l.location_id
+join countries c
+on l.country_id = c.country_id
+join regions r
+on c.region_id = r.region_id;
+
+-- Union
+
+select first_name
+from employees
+union
+select last_name
+from employees;
+
+-- Union all
+
+select first_name
+from employees
+union all
+select first_name
+from employees;
+
+select first_name, last_name, department_id
+from employees 
+where department_id in (50,80);
+
+-- Join old-school
+select e.first_name, e.last_name, d.department_name from employees e, departments d
+where e.department_id = d.department_id;
+
+select e.first_name, e.last_name, d.department_name from employees e
+join departments d
+where e.department_id = d.department_id;

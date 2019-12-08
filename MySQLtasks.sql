@@ -17,6 +17,8 @@
 24. Wyświetl minimalną i maksymalną pensję dla stanowisk o nazwie rozpoczynającej się
 od ’Sale’.
 **/
+use hr;
+
 select first_name, last_name, salary from employees;
 select first_name as imię, last_name as nazwisko from employees;
 --
@@ -66,4 +68,7 @@ group by department_id;
 select max(salary), department_id from employees
 where department_id in (50,60,100)
 group by department_id;
+
+select location_id, count(*) from departments
+group by location_id order by 2 desc;
 
