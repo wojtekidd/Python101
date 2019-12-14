@@ -86,7 +86,7 @@ and department_id != (select department_id from departments where department_nam
 
 select * from employees
 
--- Wyświetl wszystkie nazwy regionów przyporządkowując je do nazw krajow.
+-- Wyświetl wszystkie nazwy regionów przyporządkowując je do nazw krajow
 
 select r.region_name as Region, c.country_name as Country 
 from regions r
@@ -136,3 +136,29 @@ where e.department_id = d.department_id;
 select e.first_name, e.last_name, d.department_name from employees e
 join departments d
 where e.department_id = d.department_id;
+
+INSERT INTO books (title, author, published, isbn, category, page_count, publisher, price) VALUES ('Spring w akcji. Wydanie IV', 'Craig Walls', '2017-08-13', '234-83-283-0849-1', 'programowanie java', 624, 'Helion', 89.00);
+INSERT INTO books (title, author, published, isbn, category, page_count, publisher, price) VALUES ('MySQL. Vademecum profesjonalisty', 'Paul DuBois', '2016-03-29', '246-83-246-8146-9', 'bazy danych', 1216, 'Helion', 149.00);
+INSERT INTO books (title, author, published, isbn, category, page_count, publisher, price) VALUES ('ORACLE-sql', 'Marek Mycha', '2016-08-13', '978-82-283-0849-8', 'programowanie sql', 454, 'Helion', 234.00);
+INSERT INTO books (title, author, published, isbn, category, page_count, publisher, price) VALUES ('ORACLE-administracja', 'Paweł Nowak', '2015-03-28', '918-83-246-8146-5', 'bazy danych', 16, 'Helion', 1349.00);
+INSERT INTO books (title, author, published, isbn, category, page_count, publisher, price) VALUES ('MS_SQL- bazy', 'Luja Śliwa', '2013-01-13', '323-82-283-0849-7', 'bazy danych', 6224, 'Helion', 2354.00);
+INSERT INTO books (title, author, published, isbn, category, page_count, publisher, price) VALUES ('MS_SQL- programowanie', 'Mariusz Oziębły', '2012-04-15', '234-83-246-8146-4', 'programowanie sql', 162, 'Helion', 319.00);
+INSERT INTO books (title, author, published, isbn, category, page_count, publisher, price) VALUES ('IBW', 'Adam Jakis', '2014-05-16', '345-83-246-8132-9', 'programowanie ibm', 262, 'Matrix', 198.00);
+INSERT INTO books (title, author, published, isbn, category, page_count, publisher, price) VALUES ('IBM-DB2', 'Agata Loy', '2011-01-10', '678-23-316-913-1', 'bazy danych', 762, 'Matrix', 18.00);
+
+select * from books where category = 'bazy danych';
+
+create table db_books as select id, title, author, published, isbn, page_count, publisher, price, in_stock from books
+where category = "bazy danych";
+
+create table js_books as select id, title, author, published, isbn, page_count, publisher, price, in_stock from books
+where category = "programowanie java";
+
+select * from db_books;
+select * from js_books;
+
+
+
+
+
+
