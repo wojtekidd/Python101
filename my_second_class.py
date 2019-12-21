@@ -16,4 +16,4 @@ print(r1.pretty())
 print(r2.pretty())
 
 print(r1)
-
+print(r2.title)
