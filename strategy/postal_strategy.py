@@ -1,6 +1,6 @@
 from strategy.abs_strategy import AbsStrategy
 
 
-class FedexStrategy(AbsStrategy):
+class PostalStrategy(AbsStrategy):
     def calculate(self, order):
-        return 3.0
+        return 5.0

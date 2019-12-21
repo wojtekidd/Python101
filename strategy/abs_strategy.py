@@ -4,5 +4,5 @@ import abc
 class AbsStrategy(metaclass=abc.ABCMeta):
 
     @abc.abstractmethod
-    def calculate(self, value):
+    def calculate(self, order):
         pass
