@@ -10,6 +10,7 @@ strategy = FedexStrategy()
 cost_calculator = ShippingCost(strategy)
 cost = cost_calculator.shipping_cost(order)
 assert cost == 3.0
+print("FedEx Test passed")
 
 # Test UPS shipping
 order = Order()
@@ -17,6 +18,7 @@ strategy = UPSStrategy()
 cost_calculator = ShippingCost(strategy)
 cost = cost_calculator.shipping_cost(order)
 assert cost == 4.0
+print("UPS Test passed")
 
 # Test postal shipping
 order = Order()
@@ -24,3 +26,4 @@ strategy = PostalStrategy()
 cost_calculator = ShippingCost(strategy)
 cost = cost_calculator.shipping_cost(order)
 assert cost == 5.0
+print("Postal Test passed")
