@@ -12,3 +12,4 @@ while True:
         break
 
 print(iter(my_iterator))
+
