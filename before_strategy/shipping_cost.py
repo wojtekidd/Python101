@@ -9,6 +9,8 @@ class ShippingCost:
             return self._ups_cost(order)
         elif order.shipper == Shipper.post:
             return self._post_cost(order)
+        else:
+            return ValueError(f"Invalid shipper {order.shipper}")
 
 
     def _fedex_cost(self, order):
