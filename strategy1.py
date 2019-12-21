@@ -2,7 +2,7 @@ from strategy.order import Order
 from strategy.shipping_cost import ShippingCost
 from strategy.fedex_strategy import FedexStrategy
 from strategy.ups_strategy import UPSStrategy
-from strategy.postak_strategy import PostalStrategy
+from strategy.postal_strategy import PostalStrategy
 
 # Test Federal Express shipping
 order = Order()
