@@ -16,3 +16,5 @@ class Counter:
 my_counter = Counter(4,10)
 print(iter(my_counter))
 print(my_counter.current)
+for item in my_counter:
+    print(item)
