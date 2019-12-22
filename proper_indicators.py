@@ -12,7 +12,7 @@ class Indicator(AbsSubject):
 
     @property
     def closed_tickets(self):
-        return self.closed_tickets
+        return self._closed_tickets
 
     @property
     def assigned_tickets(self):

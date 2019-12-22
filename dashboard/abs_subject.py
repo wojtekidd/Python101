@@ -15,4 +15,4 @@ class AbsSubject(metaclass=abc.ABCMeta):
 
     def notify(self):
         for observer in self._observers:
-            observer.update
+            observer.update()
