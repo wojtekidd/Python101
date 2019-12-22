@@ -1,10 +1,14 @@
-from abs_builder import ABCBuilder
+from builder.bulider_dash.abs_builder import ABCBuilder
 from builder.computer4 import Computer
+
 
 class ConcreteBuilder(ABCBuilder):
 
     def new_computer(self):
         self._computer = Computer()
+
+    def get_computer(self):
+        return self._computer
 
     def get_case(self):
         self._computer.case = "Coolmaster"
@@ -15,4 +19,4 @@ class ConcreteBuilder(ABCBuilder):
         self._computer.memory = "16 GB"
 
     def install_mainboard(self):
-        return self._builder.get_computer()
+        pass
