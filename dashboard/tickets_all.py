@@ -1,2 +1,2 @@
-from dashboard.abs_ticket import AbsTicket
+from dashboard.abs_subject import AbsTicket
 
