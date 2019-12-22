@@ -6,5 +6,5 @@ for indicator in Indicators_Data:
         print(f"Current open tickets: {indicator.value}")
     elif indicator.name == "assigned":
         print(f"Current assigned tickets: {indicator.value}")
-    else:
-        print(f"Current closed tickets: {indicator.value}")
+    elif indicator.name == "closed":
+        print(f"Tickets closed in last hour: {indicator.value}")
