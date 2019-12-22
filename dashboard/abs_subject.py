@@ -13,8 +13,6 @@ class AbsSubject(metaclass=abc.ABCMeta):
     def detach(self, observer):
         self._observers -= {observer}
 
-    @abc.abstractmethod
     def notify(self):
         for observer in self._observers:
             observer.update
-
