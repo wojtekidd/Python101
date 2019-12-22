@@ -6,4 +6,4 @@ class Computer:
         self.memory = memory
 
     def display(self):
-        print(f"Custom configuration includes {self.case, self.mainboard, self.cpu, self.memory}")
+        print(f"Custom configuration includes {self.case}, {self.mainboard}, {self.cpu}, {self.memory}")
