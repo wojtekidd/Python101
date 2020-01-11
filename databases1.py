@@ -27,7 +27,7 @@ posts_df = pd.read_sql_query(query, engine)
 x = posts_df['AnswerCount']
 y = posts_df['ViewCount']
 plt.scatter(x, y)
-plt.ylim(0, 12000)
+plt.ylim([0, 20])
 plt.xlabel('Answers')
 plt.ylabel('Views')
 plt.title('Posts: Views vs. Answers')
