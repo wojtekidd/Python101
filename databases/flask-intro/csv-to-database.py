@@ -12,10 +12,10 @@ with open('flights.csv', 'r') as f:
 
 
 with open('passengers.csv', 'r') as p:
-     reader = csv.reader(p)
+    reader = csv.reader(p)
 
-     for name, flight_id in reader:
-         db.session.add(Passengers(name=name, flight_id=flight_id))
-         print(f"Added passenger {name}, to flight {flight_id}")
+    for name, flight_id in reader:
+        db.session.add(Passengers(name=name, flight_id=flight_id))
+        print(f"Added passenger {name}, to flight {flight_id}")
 
 db.session.commit()
