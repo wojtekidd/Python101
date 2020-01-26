@@ -8,7 +8,7 @@ class Flights(models.Model):
     duration = models.IntegerField(null=False)
 
     def __str__(self):
-        return f"{self.id}: from {self.origin} to {self.destination} - lasts for {self.duration} minutes"
+        return f"{self.id}: from {self.origin} to {self.destination} - lasts {self.duration} minutes"
 
 class Passengers(models.Model):
     name = models.CharField(max_length=64, null=False)

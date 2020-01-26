@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All flights</title>
+</head>
+<body>
+    <h1>Available flights ✈️</h1>
+
+    <ul style="margin: 50px">
+        {% for flight in flights %}
+        <li style="margin: 10px">{{ flight}}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

@@ -7,7 +7,13 @@ from . import models
 
 # Create your views here.
 def index(request):
-    return HttpResponse('OK')
+    flights = models.Flights.objects.all()
+    context = {
+        'flights': flights
+    }
+    return render(request,
+                  'airlines/flights.html',
+                  context)
 
 
 def upload_flights(request):
