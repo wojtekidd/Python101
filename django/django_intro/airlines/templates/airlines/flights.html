@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>All flights</title>
 </head>
 <body>
     <h1>Available flights ✈️</h1>
-
-    <ul style="margin: 50px">
+    <div>
+    <ul class="list-group">
         {% for flight in flights %}
-        <li style="margin: 10px">{{ flight}}</li>
+        <li class="list-group-item">{{ flight}}</li>
         {% endfor %}
     </ul>
-
+    </div>
 </body>
 </html>
