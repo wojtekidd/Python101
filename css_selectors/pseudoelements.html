@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS pseudoelements</title>
+    <style>
+        a::before {
+            content: "Click \21d2  ";
+            font-size: larger;
+        }
+        p::selection {
+            color: yellow;
+            background-color: #111111;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">First link</a></li>
+        <li><a href="#">Second link</a></li>
+        <li><a href="#">Third link</a></li>
+    </ul>
+    <p>My paragraph starts here</p>
+</body>
+</html>
