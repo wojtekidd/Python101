@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Descending css selectors</title>
+    <style>
+    ol > li {
+        color: red;
+    }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>One</li>
+        <li>Two</li>
+        <ul>
+            <p>My list:</p>
+            <li>Two.One</li>
+            <li>Two.Two</li>
+        </ul>
+        <li>Three</li>
+    </ol>
+    <ul>
+        <li>A</li>
+        <li>B</li>
+    </ul>
+</body>
+</html>
