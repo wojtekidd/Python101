@@ -1,8 +1,7 @@
-function() {
-    document.querySelector("button").onclick = increment;
-}
 
-document.addEventListener("DOMContentLoaded", function());
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector("button").onclick = increment;
+});
 
 let c = 0;
 
