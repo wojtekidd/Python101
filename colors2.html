@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Colors 2</title>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('button').forEach(function (button) {
+            button.onclick = function () {
+                document.querySelector('h1').style.color = button.id;
+            }
+        })
+    })
+    </script>
+</head>
+<body>
+<h1 style="color: blue">This will change when you click one of the buttons below</h1>
+<button id="red">Red</button>
+<button id="black">Black</button>
+<button id="green">Green</button>
+</body>
+</html>
