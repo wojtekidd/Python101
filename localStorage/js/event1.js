@@ -1,12 +1,12 @@
 
 
 if (!localStorage.getItem('c')) {
-     localStorage.setItem('c', 0);
+     localStorage.setItem('c', '0');
     }
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('#counter').innerHTML = localStorage.getItem('c')
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('#counter').innerHTML = localStorage.getItem('c');
     document.querySelector('button').onclick = increment;
 });
 
@@ -20,7 +20,7 @@ function increment() {
         alert(`The counter value is ${c}`);
     }
 
-    if (c === 5) {
+    if (c === '5') {
         alert(`The counter equals 5`);
     }
 }
