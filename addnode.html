@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adding nodes to dome - to-do list</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('#new-task').onsubmit = () => {
+                let newTask = document.querySelector("#task").value;
+
+                const li = document.createElement('li');
+                li.innerHTML = newTask
+
+                document.querySelector('#tasks').append(li);
+                return false
+            }});
+    </script>
+</head>
+<body>
+<h1>Todo list</h1>
+<form id="new-task">
+    <input id="task" type="text">
+    <input type="submit">
+</form>
+<ul id="tasks"</ul>
+</body>
+</html>
