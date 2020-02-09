@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Colors 2</title>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    <title>Colors 3 - with arrow notation</title>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('button').forEach(function(button) {
-            button.onclick = function () {
+            button.onclick = () => {
                 document.querySelector('#hello').style.color = button.dataset.color;
             }
         })
