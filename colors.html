@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello with JS</title>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.querySelector('#red').onclick = function() {
+            document.querySelector('h1').style.color = 'red';
+        }
+        document.querySelector('#black').onclick = function() {
+            document.querySelector('h1').style.color = 'black';
+        }
+        document.querySelector('#green').onclick = function() {
+            document.querySelector('h1').style.color = 'green';
+        }
+    })
+    </script>
+</head>
+<body>
+<h1 style="color: blue">This will change when you click one of the buttons below</h1>
+<button id="red">Red</button>
+<button id="black">Black</button>
+<button id="green">Green</button>
+</body>
+</html>
