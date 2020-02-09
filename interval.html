@@ -7,7 +7,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             setInterval(increment, 1000)
         });
-        let counter = 0;
+        let counter = -200;
         function increment() {
             counter++;
             document.querySelector('#counter').innerHTML = counter;
@@ -15,6 +15,6 @@
     </script>
 </head>
 <body>
-<h1 id="counter">0</h1>
+<h1 id="counter">-200</h1>
 </body>
 </html>
