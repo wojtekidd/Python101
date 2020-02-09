@@ -8,11 +8,18 @@
             document.querySelector('#new-task').onsubmit = () => {
                 let newTask = document.querySelector("#task").value;
 
+                if (newTask === '') {
+                    alert ("Input can't be empty");
+                    return false;
+                }
+
                 const li = document.createElement('li');
-                li.innerHTML = newTask
+                li.innerHTML = newTask;
 
                 document.querySelector('#tasks').append(li);
-                return false
+
+                document.querySelector('#task').value = '';
+                return false;
             }});
     </script>
 </head>
