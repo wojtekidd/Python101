@@ -5,15 +5,15 @@ if (!localStorage.getItem('c')) {
     }
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#counter').innerHTML = localStorage.getItem('c')
-    document.querySelector("button").onclick = increment;
+    document.querySelector('button').onclick = increment;
 });
 
 function increment() {
     let c = localStorage.getItem('c');
     c++;
-    document.querySelector("#counter").innerHTML = c;
+    document.querySelector('#counter').innerHTML = c;
     localStorage.setItem('c', c);
 
     if (c % 10 === 0) {
